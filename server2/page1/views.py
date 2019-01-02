@@ -10,7 +10,7 @@ from .models import Employee
 def index(request):
     emp = Employee.objects.all()
     context = {
-        'name' : emp
+        'name' : emp,
     }
     return render(request, 'page1/index.html', context)
 
