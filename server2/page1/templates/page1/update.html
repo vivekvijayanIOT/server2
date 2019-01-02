@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Page 1</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Google Homepage</h1>
+      <h2>Updating te database</h2>
+      <form  action="{% url 'success_update' %}" method="POST">
+      {% csrf_token %}
+      <table class="table table-hover">
+          <tr>
+
+            <th>Name</th>
+            <th>Salary</th>
+            <th>action</th>
+          </tr>
+          <tr>
+            <td> <input type="hidden" name="o_name" value="{{o_name}}"> </td>
+            <td><input type="text" name="n_name" value="{{u_name}}"></td>
+            <td><input type="text" name="n_salary" value="{{u_salary}}"></td>
+            <td><input type="submit" name="submit" value="Change"></td>
+          </tr>
+    </table>
+    </form>
+  </body>
+</html>

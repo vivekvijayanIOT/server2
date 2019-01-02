@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Age page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="" style="padding:50px;">
+      <h1>Salary calculation</h1>
+      <p>These are the salary earned by the current population</p>
+      <a href="{% url 'index' %}">Add New Entry</a>
+    </div>
+
+<div class="" style="padding-left:80px; padding-right:80px;">
+  <table class="table table-hover" >
+    <tr>
+      <th>Name</th>
+      <th>Salary earning</th>
+      <th>Operations</th>
+    </tr>
+    {% for a in name %}
+    <tr>
+      <td> {{a.ename}} </td>
+      <td> {{a.salary}}</td>
+      <td>
+        <a href="{% url 'delete' name=a.ename %}">
+        Delete</a>
+        &nbsp;
+        <a href="{% url 'index' %}">Add
+        </a>
+        &nbsp;
+        <a href="{% url 'update' name=a.ename %}">Change</a>
+      </td>
+
+    </tr>
+    {% endfor %}
+    </table>
+</div>
+
+
+  </body>
+</html>
