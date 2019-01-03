@@ -24,7 +24,7 @@
     {% for a in name %}
     <tr>
       <td> {{a.ename}} </td>
-      <td> {{a.salary}}</td>
+      <td> Rs. {{a.salary}}</td>
       <td>
         <a href="{% url 'delete' name=a.ename %}">
         Delete</a>
