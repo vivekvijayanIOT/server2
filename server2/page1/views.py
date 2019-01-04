@@ -2,10 +2,18 @@
 from __future__ import unicode_literals
 
 from django.shortcuts import render, redirect
+from django.contrib.auth import login,logout,authenticate
 from django.http import HttpResponse
 from .models import Employee
+import time
 
 # Create your views here.
+
+def home(request):
+    context = {
+    'date' : time.ctime()
+    }
+    return render(request,'page1/home.html',context)
 
 def index(request):
     emp = Employee.objects.all()
@@ -58,3 +66,14 @@ def success_update(request):
         emp.salary = n_salary
         emp.save()
     return redirect(index3)
+
+def login_site(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        pasword = request.POST['pasword']
+        user = authenticate(request , username = username , password = password)
+        if user:
+            context = {
+            'user' : username
+            }
+            return render(request, 'page1/success.html', context)

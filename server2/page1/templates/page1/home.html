@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Home page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  </head>
+  <body>
+ <div class="" style="padding:50px;">
+   <h2>My Home</h2>
+   <p>personal homepage developed by me for the django server</p>
+   <br>
+   <p style="color:red;">Click the login to get into my site</p>
+   <div class="container" style="padding:10px;">
+     <form method="post" action="{% url 'login_site' %}">
+       {% csrf_token %}
+     <table class="table table-hover">
+       <tr>
+         <td>
+            <input type="text" required name="username" value="" placeholder="Enter the username">
+         </td>
+         <td>
+           <input type="password" required name="pasword" value="" placeholder="Enter the password">
+         </td>
+         <td>
+           <input type="submit" name="submit" value="Login">
+         </td>
+       </tr>
+
+     </table>
+   </div>
+ </div>
+  </body>
+</html>
