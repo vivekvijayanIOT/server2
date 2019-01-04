@@ -67,13 +67,18 @@ def success_update(request):
         emp.save()
     return redirect(index3)
 
-def login_site(request):
-    if request.method == 'POST':
+def login_sites(request):
+    '''if request.method == 'POST':
         username = request.POST['username']
-        pasword = request.POST['pasword']
+        password = request.POST['password']
         user = authenticate(request , username = username , password = password)
         if user:
+            login(request,user)
             context = {
             'user' : username
             }
             return render(request, 'page1/success.html', context)
+        else:
+            return HttpResponse("Sorry")
+    return HttpResponse("sorry too")'''
+    return HttpResponse("gotcha")

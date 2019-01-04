@@ -12,10 +12,11 @@
  <div class="" style="padding:50px;">
    <h2>My Home</h2>
    <p>personal homepage developed by me for the django server</p>
+   <h3>Server Loaded on {{date}}</h3>
    <br>
    <p style="color:red;">Click the login to get into my site</p>
    <div class="container" style="padding:10px;">
-     <form method="post" action="{% url 'login_site' %}">
+     <form method="POST" action="{% url 'login' %}">
        {% csrf_token %}
      <table class="table table-hover">
        <tr>
@@ -23,13 +24,13 @@
             <input type="text" required name="username" value="" placeholder="Enter the username">
          </td>
          <td>
-           <input type="password" required name="pasword" value="" placeholder="Enter the password">
+           <input type="password" required name="password" value="" placeholder="Enter the password">
          </td>
          <td>
            <input type="submit" name="submit" value="Login">
          </td>
        </tr>
-
+     </form>
      </table>
    </div>
  </div>
