@@ -11,5 +11,4 @@ urlpatterns = [
     url('success_update/',views.success_update,name="success_update"),
     url('login/',views.login_site,name="login_site")
     #url('update/(?P<name>[A-Z]*[a-z]+)/(?P<salary>[0-9]+)',views.update,name="update")
-
 ]
