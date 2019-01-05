@@ -62,7 +62,9 @@ def index3(request):
 def delete(request,name):
     global session_key
     get_name=(name)
-    emp=Employee.objects.get(ename=str(name))
+    try:
+        emp=Employee.objects.get(ename=str(name))
+    except(KeyError,Employee.)
     emp.delete()
     #emp.save()
     context={}
