@@ -64,7 +64,8 @@ def delete(request,name):
     get_name=(name)
     try:
         emp=Employee.objects.get(ename=str(name))
-    except(KeyError,Employee.)
+    except(KeyError,Employee.MultipleObjectsReturned):
+        return HttpResponse("Sorry some records are error")
     emp.delete()
     #emp.save()
     context={}
