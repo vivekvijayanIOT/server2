@@ -6,6 +6,37 @@ from django.contrib.auth import login,logout,authenticate
 from django.http import HttpResponse
 from .models import Employee
 import time
+import time
+import hashlib
+import os
+import sys
+import matplotlib.pyplot as plt
+import base64
+import time
+
+# Classes starts
+class Hack:
+    hash_key = ""
+    count = 0
+    text=[]
+    hash=[]
+    def __init__(self, key):
+        self.hash_key = key
+        file = open('word_list.vk_hack')
+        self.count = len(open('word_list.vk_hack').readlines())
+        print("Loading....")
+        time.sleep(3)
+        if self.count>0:
+            print("Data collected from the Spreadsheet")
+        else:
+            print("Database is empty")
+
+    def list_upload(self):
+        file = open('word_list.vk_hack')
+        for a in range(self.count):
+            _1, _2 = a.split(' ',1)
+            self.text.append(str(_1))
+            self.hash.append(str(_2))
 
 # Create your views here.
 
